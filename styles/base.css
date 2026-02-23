@@ -122,7 +122,33 @@ em { font-style: italic; }
 
 .text-center { text-align: center; }
 .text-balance { text-wrap: balance; }
+/* Пульсуючий текст з сильною видимістю */
+.hero__label {
+    display: inline-block;
+    color: #ffffff; /* білий текст для контрасту */
+    font-weight: 700;
+    text-shadow:
+        0 0 5px #ffffff,   /* базове світіння */
+        0 0 10px #ffffff,  /* пом’якшене світіння */
+        0 0 15px #00ffea,  /* додаткове яскраве світіння */
+        0 0 20px #00ffea;  /* більш інтенсивне світіння */
+    animation: pulse 2s infinite;
+}
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.07); /* трохи більша пульсація */
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 /* ---- Section Label ---- */
 .section-label {
   display: inline-flex;
